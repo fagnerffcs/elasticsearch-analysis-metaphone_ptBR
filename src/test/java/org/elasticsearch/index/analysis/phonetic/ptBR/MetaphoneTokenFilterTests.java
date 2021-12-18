@@ -29,7 +29,7 @@ import org.apache.lucene.analysis.core.KeywordTokenizer;
 import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.elasticsearch.Version;
-import org.elasticsearch.cluster.metadata.IndexMetaData;
+import org.elasticsearch.cluster.metadata.IndexMetadata;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.index.Index;
 import org.elasticsearch.index.analysis.TokenFilterFactory;
@@ -46,7 +46,7 @@ public class MetaphoneTokenFilterTests extends ESTestCase {
     public void testMetaphoneWords() throws Exception {
         Index index = new Index("test", "_na_");
         Settings settings = Settings.builder()
-                .put(IndexMetaData.SETTING_VERSION_CREATED, Version.CURRENT)
+                .put(IndexMetadata.SETTING_VERSION_CREATED, Version.CURRENT)
                 .put("index.analysis.filter.myStemmer.type", "br_metaphone")
                 .build();
 
@@ -75,7 +75,7 @@ public class MetaphoneTokenFilterTests extends ESTestCase {
     public void testMetaphonePhrases() throws Exception {
         Index index = new Index("test", "_na_");
         Settings settings = Settings.builder()
-                .put(IndexMetaData.SETTING_VERSION_CREATED, Version.CURRENT)
+                .put(IndexMetadata.SETTING_VERSION_CREATED, Version.CURRENT)
                 .put("index.analysis.analyzer.myAnalyzer.type", "custom")
                 .put("index.analysis.analyzer.myAnalyzer.tokenizer", "standard")
                 .put("index.analysis.analyzer.myAnalyzer.filter", "br_metaphone")
