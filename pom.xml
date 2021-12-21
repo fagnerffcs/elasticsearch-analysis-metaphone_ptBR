@@ -20,12 +20,13 @@
 		<timestamp></timestamp>
 		<skipTests>false</skipTests>
 		<lucene.version>8.10.1</lucene.version>
+		<elastic.version>7.16.2</elastic.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.elasticsearch</groupId>
 			<artifactId>elasticsearch</artifactId>
-			<version>7.16.2</version>
+			<version>${elastic.version}</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
@@ -44,7 +45,7 @@
 		<dependency>
 			<groupId>org.elasticsearch.test</groupId>
 			<artifactId>framework</artifactId>
-			<version>7.16.2</version>
+			<version>${elastic.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
@@ -68,7 +69,7 @@
 						</manifest>
 						<manifestEntries>
 							<X-Build-Time>${timestamp}</X-Build-Time>
-							<X-Compile-Elasticsearch-Version>7.16.2</X-Compile-Elasticsearch-Version>
+							<X-Compile-Elasticsearch-Version>${elastic.version}</X-Compile-Elasticsearch-Version>
 							<X-Compile-Lucene-Version>${lucene.version}</X-Compile-Lucene-Version>
 							<X-Compile-Source-JDK>1.8</X-Compile-Source-JDK>
 							<X-Compile-Target-JDK>1.8</X-Compile-Target-JDK>
