@@ -1,4 +1,4 @@
 http.cors.enabled: true
 http.cors.allow-origin: "*"
+http.port: 9200
 transport.tcp.port: 9300
-xpack.security.enabled: false
